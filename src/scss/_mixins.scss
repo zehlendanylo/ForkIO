@@ -1,0 +1,30 @@
+@mixin title_h2 {
+   font-family: Montserrat, sans-serif;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 48px;
+   color: #FFFFFF;
+   text-align: center;
+   word-wrap: break-word;
+}
+@mixin lato-descr {
+   font-family: Lato;
+   font-style: italic;
+   font-weight: bold;
+   font-size: 16px;
+   line-height: 24px;
+   color: #FFFFFF;
+}
+
+@mixin flex-center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+@mixin montserrat-normal {
+   font-weight: normal;
+   font-family: Montserrat, sans-serif;
+   color: #FFFFFF;
+   text-align: center;
+}

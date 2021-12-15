@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #27262A;
+    padding: 30px 0 30px 0px;
+}
+.header__logo{
+    margin-left: 16px;
+}
+.header__button{
+    border: none;
+    border-radius: 40px;
+    background: none;
+    color: white;                      /*Записать цвета в переменную*/
+    background-color: #8D81AC;
+    width: 120px;
+    height: 37px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.header__burger-menu {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px; 
+    cursor: pointer;
+    margin-right: 16px;
+}
+.header__burger-menu span,
+.header__burger-menu::before,
+.header__burger-menu::after{
+     left: 0;
+     position: absolute;
+     height: 10%;
+     width: 100%;
+     transition: all 0.3 ease 0s;
+     background-color: #fff;
+     border-radius: 20px;
+
+}
+.header__burger-menu::before,
+.header__burger-menu::after{
+    content: "";
+}
+.header__burger-menu::before{
+    left: 25%;
+    width: 75%;
+    top: 0;
+}
+.header__burger-menu::after{
+    bottom: 0;
+}
+.header__burger-menu span{
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+}
+
+/* //////MAIN////// */
+
+
+.fork{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../images/laptop.png);
+    background-position: center;
+}

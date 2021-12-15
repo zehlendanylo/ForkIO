@@ -1,0 +1,37 @@
+@media screen and (max-width: 1200px) {
+   .container {
+      min-width: 993px;
+      max-width: 1200px;
+   }
+   .reviews__title, .prices__title {
+      font-size: 42px;
+   }
+   .companies {
+      row-gap: 36px;
+      column-gap: 10px;
+   }
+}
+@media (max-width: 992px) {
+   .container {
+      max-width: 992px;
+      min-width: 481px;
+   }
+   .companies {
+      gap: 40px;
+   }
+   .prices__cards {
+      flex-wrap: wrap;
+   }
+   
+}
+@media (max-width: 480px) {
+   .container {
+      max-width: 480px;
+      min-width: 320px;
+      padding: 0;
+   }
+   .reviews__title, .prices__title {
+      font-size: 36px;
+   }
+
+}
