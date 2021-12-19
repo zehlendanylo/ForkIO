@@ -19,15 +19,15 @@ const convertCss = () => src('src/scss/**', { nodir: true })
   .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
   .pipe(cleanCSS({
     html: ['index.html'],
-    ignore: [".header__content-burgerMenu--active", ".header__navigation-call-open--active", ".header__navigation-call-close--active", ".fade-in", ".fade-out"]
+    ignore: [".activeToggle"]
   }))
   .pipe(concat('styles.min.css'))
   .pipe(minifyCSS({compatibility: 'ie8'}))
   .pipe(dest('dist/css'));
-// const convertJs = () => src('src/js/script.js')
-//   .pipe(concat('scripts.min.js'))
-//   .pipe(minifyJS())
-//   .pipe(dest('dist/js'));
+const convertJs = () => src('src/js/script.js')
+  .pipe(concat('scripts.min.js'))
+  .pipe(minifyJS())
+  .pipe(dest('dist/js'));
 const prepareImg = () => src('src/images/**/*')
   .pipe(imageMin({
     interlaced: true,
@@ -41,9 +41,9 @@ const startWatching = () => {
       baseDir: "./"
     }
   });
-//   watch('src').on('all', series(convertCss, convertJs, prepareImg, browserSync.reload));
-  watch('src').on('all', series(convertCss, prepareImg, browserSync.reload));
+  watch('src').on('all', series(convertCss, convertJs, prepareImg, browserSync.reload));
+  // watch('src').on('all', series(convertCss, prepareImg, browserSync.reload));
 }
 task('dev', startWatching);
-// task('build', series(cleanFolder, convertCss, convertJs, prepareImg));
-task('build', series(cleanFolder, convertCss, prepareImg));
+task('build', series(cleanFolder, convertCss, convertJs, prepareImg));
+// task('build', series(cleanFolder, convertCss, prepareImg));
